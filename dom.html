@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="name" />
+    <h1 id="fname"></h1>
+    <button onclick="handle()">submit</button>
+
+    <script>
+      const handle = () => {
+        let fname = document.getElementById("name").value;
+
+        let h1tag = document.getElementById("fname");
+
+        h1tag.innerHTML = fname;
+
+        if (fname == "") {
+          h1tag.innerHTML = "please valid input";
+          h1tag.style.color = "red";
+        } else {
+          console.log(fname);
+          h1tag.style.color = "green";
+        }
+      };
+    </script>
+  </body>
+</html>
