@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Garvit</h1>
+    <h1>DHameliya</h1>
+    <h1>Ram</h1>
+
+    <button id="button">CLick me</button>
+
+    <script>
+      const list = document.querySelectorAll("h1");
+
+      //   list.map((val, ind) => {
+      //     console.log(val);
+      //   });
+
+      list.forEach((val) => {
+        console.log(val);
+        val.style.color = "red";
+      });
+
+      //   list[2].style.color = "red";
+
+      //   document.getElementById("button").addEventListener("mouseout", () => {
+      //     console.log("click click");
+
+      //   });
+
+      //   function myfunction() {
+      //     console.log("clicked");
+      //   }
+    </script>
+  </body>
+</html>
