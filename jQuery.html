@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p>hello</p>
+
+    <input type="text" id="fname" />
+
+    <button id="show">show</button>
+    <button class="hide">hide</button>
+    <script>
+      //   $(document).ready(function () {
+      //     console.log("start");
+
+      //     $("p").click(function () {
+      //       console.log("clicked");
+      //       $(this).hide();
+      //     });
+      //   });
+
+      $(document).ready(function () {
+        $(".hide").dblclick(function () {
+          //   $("p").hide();
+
+          let fname = $("#fname").val();
+          console.log(fname);
+        });
+
+        $("#show").click(function () {
+          $("p").show();
+        });
+      });
+    </script>
+  </body>
+</html>

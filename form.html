@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="fname" />
+    <h1 id="err"></h1>
+    <button onclick="save()">save</button>
+
+    <script>
+      //   console.log((document.getElementById("title").innerHTML = "ram"));
+
+      document.getElementById("title").style.color = "yellow";
+      //   let result = document.querySelectorAll("h1");
+      //   console.log(result);
+      //   console.log((result[0].style.color = "red"));
+
+      //   result.forEach((val) => {
+      //     val.style.color = "green";
+      //   });
+
+      function save() {
+        let fname = document.getElementById("fname").value;
+
+        if (fname == "") {
+          document.getElementById("err").innerHTML = "please enter value";
+          document.getElementById("err").style.color = "red";
+        } else {
+          console.log(fname);
+        }
+      }
+    </script>
+  </body>
+</html>
