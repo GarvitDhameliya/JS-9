@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class
+      class student {
+        constructor(name, balance) {
+          this.name = name;
+          this.balance = balance;
+        }
+        // method
+        // print() {
+        //   console.log("print called");
+        // }
+
+        // hello() {
+        //   console.log("hello");
+        // }
+
+        printBalance() {
+          console.log(
+            "your name is " +
+              this.name +
+              " " +
+              " your balance is " +
+              this.balance
+          );
+        }
+      }
+
+      //   object
+      //   let s1 = new student();
+      let s2 = new student("ram", 20000);
+      let s3 = new student("garvit", 1000, 600);
+
+      s2.printBalance();
+      s3.printBalance();
+
+      //   s3.print();
+
+      //   s1.hello();
+
+      //   s2.print();
+      //   s2.hello();
+    </script>
+  </body>
+</html>
