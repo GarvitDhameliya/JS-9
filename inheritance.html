@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class car {
+        constructor(name, model) {
+          this.name = name;
+          this.model = model;
+        }
+
+        showCarDetail() {
+          console.log(
+            "your card= is " + this.name + " " + "your model is " + this.model
+          );
+        }
+      }
+
+      class insurance extends car {
+        constructor(name, model, price) {
+          super(name, model);
+          this.price = price;
+        }
+
+        showFinalData() {
+          console.log(this.name);
+          console.log(this.model);
+          console.log(this.price);
+        }
+      }
+
+      const car1 = new insurance("mustange", "xyz", 120000);
+      const car2 = new insurance("ford", "yza", 23000);
+
+      car1.showFinalData();
+      car1.showCarDetail();
+
+      car2.showCarDetail();
+      car2.showFinalData();
+
+      console.log(car2.price);
+    </script>
+  </body>
+</html>
