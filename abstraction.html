@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Employee(name, id, salary) {
+        let fname = name;
+        // let id = id;
+        let sal = salary;
+        let bonus = 3000;
+        let final = sal + bonus;
+        let showSalary = () => {
+          console.log("your salary = " + final);
+        };
+        this.showDetail = () => {
+          console.log("your name is " + fname + sal);
+          showSalary();
+        };
+      }
+
+      const emp1 = new Employee("Garvit", "123", 12000);
+      const emp2 = new Employee("ram", "345", 22000);
+
+      //   emp1.showSalary();
+      emp1.showDetail();
+      emp2.showDetail();
+    </script>
+  </body>
+</html>
