@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const data = {
+        userId: 1,
+        id: 1,
+        title: "delectus aut autem",
+        completed: false,
+      };
+
+      const result = JSON.stringify(data);
+      console.log(result, "result");
+
+      const final = JSON.parse(result);
+      console.log(final, "final");
+    </script>
+  </body>
+</html>

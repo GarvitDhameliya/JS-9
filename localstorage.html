@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   localStorage.setItem("data", "my name is garvit dhameliya");
+      //   localStorage.setItem("product", "this is product one");
+
+      //   const result = localStorage.getItem("product");
+
+      //   console.log(result);
+      //   document.write(result);
+
+      //   localStorage.removeItem("data");
+
+      //   console.log(sessionStorage);
+      //   console.log(indexedDB);
+
+      //   const arr = [1, 2, 3, 4];
+
+      const result = JSON.parse(localStorage.getItem("data"));
+      //   localStorage.setItem("data", JSON.stringify(arr));
+
+      result.push(6);
+      localStorage.setItem("data", JSON.stringify(result));
+
+      // console.log(result, "result");
+
+      console.log(localStorage);
+
+      //   const arr = [1, 2, 4];
+
+      //   arr.push(6);
+
+      //   console.log(arr);
+    </script>
+  </body>
+</html>
