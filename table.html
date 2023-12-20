@@ -24,6 +24,14 @@
     <input type="text" name="age" id="age" />
     <button onclick="save()">Save</button>
 
+    <!-- update form -->
+    <input type="text" name="firstname" id="firstname" />
+    <input type="text" name="lastname" id="lastname" />
+    <input type="text" name="personage" id="personage" />
+    <input type="hidden" name="index" id="index" />
+    <button onclick="finalUpdate()">update</button>
+    <button>cancel</button>
+
     <script>
       // litrals
       //   let name = "garvit";
@@ -56,21 +64,65 @@
         loadData(data);
       };
 
-      arr.forEach(loadData);
+      arr.forEach((e, ind) => loadData(e, ind));
 
-      function loadData(e) {
-        console.log(e, "data");
+      function loadData(e, ind) {
+        // console.log(e, "data");
+        // console.log(ind, "index");
         const tr = document.createElement("tr");
         tr.innerHTML = `<td>${e.fname}</td>
                         <td>${e.lname}</td>
                          <td>${e.age}</td>
-                         <button onclick="removeData(${e.fname})">remove</button>
+                         <button onclick="removeData(${ind})">remove</button>
+                         <button onclick="viewData(${ind})">view</button>
+                         
                          `;
         tbody.appendChild(tr);
       }
 
-      function removeData(fname) {
-        console.log(fname);
+      function removeData(ind) {
+        console.log(ind);
+
+        arr.splice(ind, 1);
+
+        console.log(arr);
+
+        localStorage.setItem("details", JSON.stringify(arr));
+
+        location.reload();
+      }
+
+      function viewData(ind) {
+        const data = arr[ind];
+        console.log(data);
+
+        document.getElementById("firstname").value = data.fname;
+        document.getElementById("lastname").value = data.lname;
+        document.getElementById("personage").value = data.age;
+        document.getElementById("index").value = ind;
+      }
+
+      function finalUpdate() {
+        const fname = document.getElementById("firstname").value;
+        const lname = document.getElementById("lastname").value;
+        const age = document.getElementById("personage").value;
+
+        const index = parseInt(document.getElementById("index").value);
+
+        const data = {
+          fname,
+          lname,
+          age,
+        };
+
+        console.log(data, index);
+
+        arr.splice(index, 1, data);
+
+        console.log(arr);
+
+        localStorage.setItem("details", JSON.stringify(arr));
+        location.reload();
       }
     </script>
   </body>
