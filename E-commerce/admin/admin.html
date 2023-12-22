@@ -22,6 +22,13 @@
     <input type="number" name="price" id="price" />
     <button onclick="save()">save</button>
 
+    <!-- model -->
+    <input type="text" name="Name" id="Name" />
+    <input type="text" name="Desc" id="Desc" />
+    <input type="number" name="pr" id="pr" />
+    <input type="hidden" id="index" />
+    <button onclick="update()">update</button>
+
     <script>
       const productList = JSON.parse(localStorage.getItem("productList")) || [];
 
@@ -44,21 +51,63 @@
         loadProduct(data);
       };
 
-      productList.forEach(loadProduct);
+      productList.forEach((e, ind) => loadProduct(e, ind));
 
-      function loadProduct(data) {
+      function loadProduct(e, ind) {
         const tr = document.createElement("tr");
         tr.innerHTML = `
-        <td>${data.productName}</td>
-        <td>${data.productDesc}</td>
-        <td>${data.price}</td>
-        <button>view</button>
-        <button>remove</button>
+        <td>${e.productName}</td>
+        <td>${e.productDesc}</td>
+        <td>${e.price}</td>
+        <button onClick="handleView(${ind})">view</button>
+        <button onClick="handleDelete(${ind})">remove</button>
 
         `;
 
         tbody.appendChild(tr);
       }
+
+      function handleDelete(ind) {
+        console.log(ind);
+
+        productList.splice(ind, 1);
+
+        console.log(productList);
+
+        localStorage.setItem("productList", JSON.stringify(productList));
+        location.reload();
+      }
+
+      const handleView = (ind) => {
+        const data = productList[ind];
+
+        const Name = (document.getElementById("Name").value = data.productName);
+        const Desc = (document.getElementById("Desc").value = data.productDesc);
+        const pr = (document.getElementById("pr").value = data.price);
+        const index = (document.getElementById("index").value = ind);
+
+        console.log(data, "view");
+      };
+
+      const update = () => {
+        const Name = document.getElementById("Name").value;
+        const Desc = document.getElementById("Desc").value;
+        const pr = document.getElementById("pr").value;
+        const index = document.getElementById("index").value;
+
+        const data = {
+          productName: Name,
+          productDesc: Desc,
+          price: pr,
+        };
+
+        console.log(data, "update");
+
+        productList.splice(index, 1, data);
+
+        localStorage.setItem("productList", JSON.stringify(productList));
+        location.reload();
+      };
     </script>
   </body>
 </html>
